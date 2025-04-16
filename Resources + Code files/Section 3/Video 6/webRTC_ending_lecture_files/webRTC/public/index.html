@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WebRTC Chat Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Landing Page Container -->
+    <div id="landing_page_container">
+        <div id="header">
+            <h1>Welcome to WebRTC</h1>
+        </div>
+        <p>Start a private room between you and another peer, where you can communicate in real time through your browser or phone.</p>
+        <br>
+        <h4>Getting started</h4>
+        <ol>
+            <li>Type a channel name and click <strong>Create</strong></li>
+            <li>Get your colleague to open this page in another tab</li>
+            <li>They must type the same channel name in the other tab page and click <strong>Join</strong></li>
+            <li>Start chatting!</li>
+        </ol>
+        <div id="enter_room_wrapper">
+            <input type="text" id="input_room_channel_name" placeholder="Enter channel name" />
+            <button id="create_room_button">Create</button>
+            <button id="join_button">Join</button>
+            <button id="info_modal_button">?</button>
+        </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="info_modal_content_container" class="modal">
+        <div id="modal_content">
+            <span id="close" aria-hide="true">&times;</span>
+            <h5>How does this app work?</h5>
+            <p>This app teaches you about WebRTC to establish direct, real-time communication through your browser with another peer. The other peer will also be connected by having an instance of this app open on their device.</p>
+        </div>
+    </div>
+
+    <!-- Room Interface -->
+    <div id="room_interface" class="hide">
+        <div class="room_header">
+            <h2 id="room_name_heading_tag"></h2>
+            <button id="destroy_button">Destroy Room</button>
+            <button id="exit_button">Exit Room</button>
+        </div>
+        <div id="messages">Waiting for a peer to join.</div>
+        <div id="message_input" class="hide">
+            <input type="text" id="message_input_field" placeholder="Type a message..." />
+            <button id="send_message_button">Send</button>
+        </div>
+        <br>
+
+        <!-- BUTTONS FOR LEARNING PURPOSES ONLY  -->
+         <!-- offeror buttons -->
+         <div id="offeror_process_buttons" class="buttons hide">
+            <button id="create_pc" class="process_pending learning-button">1: Create PC</button>
+            <button id="add_data_type" class="process_pending learning-button">2: Add dataChannel</button>
+            <button id="create_offer" class="process_pending learning-button">3: Create offer</button>
+            <button id="update_local_description" class="process_pending learning-button">4: Set local description</button>
+            <button id="send_offer" class="process_pending learning-button">5: Send offer</button>
+            <button id="ice_offeror" class="ice learning-button hide">🧊</button>
+            <button id="set_remote_description" class="learning-button hide">Set Remote Description</button>
+        </div>
+         <!-- offeree buttons -->
+         <div id="offeree_process_buttons" class="buttons hide">
+            <button id="offeree_create_pc" class="process_pending learning-button">1: Create PC</button>
+            <button id="offeree_add_data_type" class="process_pending learning-button">2: Register dataChannel</button>
+            <button id="offeree_update_remote_description" class="process_pending learning-button">3: Set remote description</button>
+            <button id="offeree_create_answer" class="process_pending learning-button">4: Create answer</button>
+            <button id="offeree_update_local_description" class="process_pending learning-button">5: Set local description</button>
+            <button id="offeree_send_answer" class="process_pending learning-button">6: Send answer</button>
+            <button id="ice_offeree" class="ice learning-button hide">🧊</button>
+        </div>
+    </div>
+    
+    <br>
+    <!-- Custom Console -->
+    <div id="console_wrapper">
+        <p>WebRTC Status Console 👇</p>
+        <!-- Unique Session ID Display -->
+        <p id="session_id_display"></p>
+        <!-- actual console box -->
+        <div id="console_display"></div>
+    </div>
+    <script src="./main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Video Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- USER 1 FEED -->
+        <div class="video-container" id="myVideoContainer">
+            <!-- User's video stream will be displayed here -->
+            <video id="myVideo" autoplay></video>
+        </div>
+
+        <!-- USER 2 FEED (hypothetical) -->
+        <div class="video-container" id="otherUserContainer">
+            <!-- Message indicating where the other user's stream will be displayed -->
+            <p>Demo only. Once WebRTC connection established, you just take other users stream and display it here. Easy peazy lemon squeezy 🍋</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
